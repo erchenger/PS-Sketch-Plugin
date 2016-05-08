@@ -1,0 +1,45 @@
+var onRun = function(context) {
+
+  log('This is an example Sketch script.');
+
+  var documentName = context.document.displayName();
+  var doc = context.document;
+  log('The current document is named: ' + documentName);
+
+  var itemMap = new Map();
+  var jsonPayload = [];
+  var textPayload = {};
+
+  var pages = [doc pages];
+  for(var i=0;i<[pages count];i++){
+    var page = [pages objectAtIndex:i];
+    var artBoards = [[pages objectAtIndex:i] artboards];
+    for(var y=0;y<[artBoards count];y++){
+      var artBoard = [artBoards objectAtIndex:y];
+      var layers = [[artBoards objectAtIndex:y] children];
+      for(var z=0;z<[layers count];z++){
+        var layer = [layers objectAtIndex:z];
+        if(layer.isKindOfClass(MSTextLayer)){
+          log("Text Name:" +layer.name()+ " String Value: "+layer.stringValue());
+          var textItemName = layer.name();
+          var textItemValue = ""+layer.stringValue();
+          textPayload[textItemName] = textItemValue;
+          if(itemMap.get(textItemName) != null){
+            log("Text ID is in array")
+          }else{
+            itemMap.set(textItemName,textItemValue);
+            jsonPayload.push(textPayload);
+          }
+        }
+      }
+    }
+  }
+
+
+    var jsonString = JSON.stringify(textPayload, null, 2);
+    log("JSON: "+jsonString);
+    log("User: "+NSHomeDirectory());
+  var someString = [NSString stringWithFormat:"%@", jsonString],
+  filePath = NSHomeDirectory()+"/Desktop/strings.json";
+  [someString writeToFile:filePath atomically:true encoding:NSUTF8StringEncoding error:nil];
+}

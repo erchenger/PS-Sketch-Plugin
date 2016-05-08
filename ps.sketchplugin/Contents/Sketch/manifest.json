@@ -1,0 +1,25 @@
+{
+  "name":"PS",
+  "description": "Sketch plugin to export Strings for easy consumption in applications or for localizations",
+  "author":"Elliott Chenger",
+  "homepage":"www.omitneedlesscode.com/ps",
+  "version":"0.0.2",
+  "identifier":"com.omitneedlesscode.sketch",
+  "updateUrl":"",
+  "compatibleVersion":3,
+  "bundleVersion":1,
+  "commands":[
+    {
+      "name":"Export Strings",
+      "identifier":"export strings",
+      "script":"ps_text.cocoascript",
+      "handler":"onRun"
+
+    }
+  ],
+  "menu": {
+      "items": [
+        "export strings"
+      ]
+    }
+}
