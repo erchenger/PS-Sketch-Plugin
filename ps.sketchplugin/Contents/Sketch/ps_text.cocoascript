@@ -23,13 +23,18 @@ var onRun = function(context) {
           log("Text Name:" +layer.name()+ " String Value: "+layer.stringValue());
           var textItemName = layer.name();
           var textItemValue = ""+layer.stringValue();
-          textPayload[textItemName] = textItemValue;
-          if(itemMap.get(textItemName) != null){
-            log("Text ID is in array")
-          }else{
-            itemMap.set(textItemName,textItemValue);
-            jsonPayload.push(textPayload);
+          if(textItemName.length()>4){
+           if(textItemName.substring(0,4)==="loc_"){
+             textPayload[textItemName.substring(4)] = textItemValue;
+             if(itemMap.get(textItemName) != null){
+               log("Text ID is in array")
+             }else{
+               itemMap.set(textItemName,textItemValue);
+               jsonPayload.push(textPayload);
+             }
+           }
           }
+
         }
       }
     }
@@ -42,4 +47,7 @@ var onRun = function(context) {
   var someString = [NSString stringWithFormat:"%@", jsonString],
   filePath = NSHomeDirectory()+"/Desktop/strings.json";
   [someString writeToFile:filePath atomically:true encoding:NSUTF8StringEncoding error:nil];
+
+  var app = NSApplication.sharedApplication()
+  app.displayDialog_withTitle("Saved strings.json to the following path: "+filePath, "We’re done")
 }

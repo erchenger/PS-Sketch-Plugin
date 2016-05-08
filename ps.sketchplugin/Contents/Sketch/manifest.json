@@ -3,9 +3,9 @@
   "description": "Sketch plugin to export Strings for easy consumption in applications or for localizations",
   "author":"Elliott Chenger",
   "homepage":"www.omitneedlesscode.com/ps",
-  "version":"0.0.2",
+  "version":"0.0.3",
   "identifier":"com.omitneedlesscode.sketch",
-  "updateUrl":"",
+  "updateUrl":"https://github.com/erchenger/PS-Sketch-Plugin",
   "compatibleVersion":3,
   "bundleVersion":1,
   "commands":[
