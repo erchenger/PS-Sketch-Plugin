@@ -2,7 +2,7 @@
 Sketch plugin to export Strings for easy consumption in applications or for localizations. This plugin is in beta so please understand that there is still work to be done. Any issues you have please submit via github issues.
 
 #Installing
-- Download the plugin zip.
+- Download the [plugin zip](https://github.com/erchenger/PS-Sketch-Plugin/blob/master/archive/PS-Sketch-Plugin_0.1.0.zip).
 - Unzip
 - Double click the `ps.sketchplugin` file
 - You should be prompted by Sketch to install the plugin
