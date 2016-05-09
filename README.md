@@ -11,7 +11,7 @@ Sketch plugin to export Strings for easy consumption in applications or for loca
 - Change text layer name to include a prefix of `loc_`
  - Exmaple:
    - Text Name: loc_title
-   - Text Value: The Title of the string
+    - Text Value: The Title of the string
 - Click `plugins>PS>Export Strings`
 - After the `strings.json` file is exported a dialog will pop up with it's location
 
